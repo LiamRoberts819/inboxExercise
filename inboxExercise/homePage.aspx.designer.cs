@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace inboxExercise
-{
-
-
-    public partial class home
-    {
-
+namespace inboxExercise {
+    
+    
+    public partial class homePage {
+        
         /// <summary>
         /// form1 control.
         /// </summary>
