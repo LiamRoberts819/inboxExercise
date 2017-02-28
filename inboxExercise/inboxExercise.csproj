@@ -98,6 +98,8 @@
     <Content Include="App_Data\inboxDatabase_log.ldf">
       <DependentUpon>inboxDatabase.mdf</DependentUpon>
     </Content>
+    <Content Include="composePage.aspx" />
+    <Content Include="inboxPage.aspx" />
     <Content Include="loginPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
@@ -115,12 +117,26 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="composePage.aspx.cs">
+      <DependentUpon>composePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="composePage.aspx.designer.cs">
+      <DependentUpon>composePage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="homePage.aspx.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="homePage.aspx.designer.cs">
       <DependentUpon>homePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="inboxPage.aspx.cs">
+      <DependentUpon>inboxPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="inboxPage.aspx.designer.cs">
+      <DependentUpon>inboxPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="loginPage.aspx.cs">
       <DependentUpon>loginPage.aspx</DependentUpon>
