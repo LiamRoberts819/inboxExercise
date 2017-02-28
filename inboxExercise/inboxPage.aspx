@@ -16,19 +16,25 @@
             <th>Date</th>
         </tr>
         <%
-                SqlConnection con;
-                SqlCommand cmd;
-                SqlDataReader reader;
-                con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
-                con.Open();
-                cmd = new SqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = (string.Format("select * from Emails where ToUser = '{0}'", Session["User"]));
+            SqlConnection con;
+            SqlCommand cmd;
+            SqlDataReader reader;
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+            con.Open();
+            cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = (string.Format("select * from Emails where ToUser = '{0}'", Session["User"]));
 
-                reader = cmd.ExecuteReader();
+            reader = cmd.ExecuteReader();
 
-                while (reader.Read())
-                    Response.Write(string.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>", "  ", reader["From"], reader["Subject"], reader["Date"]));
+            while (reader.Read())
+            {
+                Response.Write(string.Format("<tr><td>{0}</td><td>{1}</td>", "  ", reader["From"]));
+                Response.Write(string.Format("<td>{0}</td><td><a href = 'viewEmail.aspx?emailId={1}' />{2}</td>", "  ",reader["EmailId"], reader["Subject"]));
+                Response.Write(string.Format("<td>{0}</td><td>{1}</td></tr>", "  ", reader["Date"]));
+            }
+
+
                 %>
 
     </table>

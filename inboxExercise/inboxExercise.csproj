@@ -120,6 +120,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="loginForm.aspx" />
+    <Content Include="viewEmail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +166,13 @@
     </Compile>
     <Compile Include="createAccount.aspx.designer.cs">
       <DependentUpon>createAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewEmail.aspx.cs">
+      <DependentUpon>viewEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewEmail.aspx.designer.cs">
+      <DependentUpon>viewEmail.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
