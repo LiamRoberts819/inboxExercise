@@ -1,14 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="inboxExercise.Menu" %>
-<% @Import Namespace="System.Data.SqlClient" %>
-<% 
-    SqlConnection con;
-    SqlCommand cmd;
-    SqlDataReader reader;
-    con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\Administrator\Documents\Visual Studio 2015\Projects\ASP.Net\WebApplication1\WebApplication1\App_Data\QA.mdf';Integrated Security=True");
-    con.Open();
-    cmd = new SqlCommand();
-    cmd.Connection = con;
-%>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,14 +9,14 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form2" runat="server">
-        <div>
+    <form id="form1" runat="server">
+    <div>
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Home" />
             <asp:Button ID="Button2" runat="server" Text="Address Book" />
             <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="LogOut" />
-        </div>
-    </form>
-    <form id="form1" runat="server">
+    </div>
+
+
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         

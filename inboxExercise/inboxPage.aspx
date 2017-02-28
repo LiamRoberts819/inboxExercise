@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Menu.Master" AutoEventWireup="true" CodeBehind="inboxPage.aspx.cs" Inherits="inboxExercise.inboxPage" %>
+<% @Import Namespace="System.Data.SqlClient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -7,7 +8,7 @@
 &nbsp;
         <asp:Button ID="buttonAddressBook" runat="server" Text="Address Book" />
     <br />
-    <table name="tableInbox" id="tableInbox">
+    <table id="tableInbox">
         <tr>
             <th>delete</th>
             <th>From</th>
@@ -15,10 +16,21 @@
             <th>Date</th>
         </tr>
         <%
+                SqlConnection con;
+                SqlCommand cmd;
+                SqlDataReader reader;
+                con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
+                con.Open();
+                cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = (string.Format("select * from Emails where ToUser = '{0}'", Session["User"]));
 
-            <tr>
+                reader = cmd.ExecuteReader();
 
-        </tr>
+                while (reader.Read())
+                    Response.Write(string.Format("<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>", "  ", reader["From"], reader["Subject"], reader["Date"]));
+                %>
+
     </table>
     
     

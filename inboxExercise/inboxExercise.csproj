@@ -98,6 +98,10 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\emailInbox.mdf" />
+    <Content Include="App_Data\emailInbox_log.ldf">
+      <DependentUpon>emailInbox.mdf</DependentUpon>
+    </Content>
     <Content Include="inboxPage.aspx" />
     <Content Include="loginPage.aspx" />
     <Content Include="packages.config" />
