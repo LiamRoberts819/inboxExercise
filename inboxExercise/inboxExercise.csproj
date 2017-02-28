@@ -94,10 +94,18 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="inboxPage.aspx" />
+    <Content Include="loginPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Menu.Master" />
+    <Content Include="createAccount.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -106,18 +114,46 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="homePage.aspx" />
+    <Content Include="loginForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="homePage.aspx.cs">
-      <DependentUpon>homePage.aspx</DependentUpon>
+    <Compile Include="inboxPage.aspx.cs">
+      <DependentUpon>inboxPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="homePage.aspx.designer.cs">
-      <DependentUpon>homePage.aspx</DependentUpon>
+    <Compile Include="inboxPage.aspx.designer.cs">
+      <DependentUpon>inboxPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginForm.aspx.cs">
+      <DependentUpon>loginForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginForm.aspx.designer.cs">
+      <DependentUpon>loginForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loginPage.aspx.cs">
+      <DependentUpon>loginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loginPage.aspx.designer.cs">
+      <DependentUpon>loginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.Master.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.Master.designer.cs">
+      <DependentUpon>Menu.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="createAccount.aspx.cs">
+      <DependentUpon>createAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="createAccount.aspx.designer.cs">
+      <DependentUpon>createAccount.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
