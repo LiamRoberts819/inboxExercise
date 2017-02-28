@@ -21,6 +21,7 @@ namespace inboxExercise
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            Session.Abandon();
             Response.Redirect("loginPage");
         }
     }

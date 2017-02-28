@@ -27,8 +27,30 @@ namespace inboxExercise
             if (R.Read())
             {
                 Session["User"] = R["EmailAddress"].ToString();
-                Response.Redirect("inboxPage.aspx");
+                if (CheckBox1.Checked == true)
+                {
+                    Response.Cookies[R["EmailAddress"].ToString()].Value = TextBox1.Text;
+                    Response.Cookies[R["Password"].ToString()].Value = TextBox2.Text;
+                    Response.Cookies[R["EmailAddress"].ToString()].Expires = DateTime.Now.AddDays(15);
+                    Response.Cookies[R["Password"].ToString()].Expires = DateTime.Now.AddDays(15);
+                    Response.Redirect("inboxPage.aspx");
+                }
+
+                else
+                {
+                    Response.Cookies[R["EmailAddress"].ToString()].Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies[R["Password"].ToString()].Expires = DateTime.Now.AddDays(-1);
+                }
             }
+            else
+            {
+                Response.Write("Invalid Username and Password");
+            }    
+        }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

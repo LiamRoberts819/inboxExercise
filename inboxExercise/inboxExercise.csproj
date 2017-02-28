@@ -98,6 +98,7 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="forgotPassword.aspx" />
     <Content Include="inboxPage.aspx" />
     <Content Include="loginPage.aspx" />
     <Content Include="packages.config" />
@@ -118,6 +119,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forgotPassword.aspx.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotPassword.aspx.designer.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="inboxPage.aspx.cs">
       <DependentUpon>inboxPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
