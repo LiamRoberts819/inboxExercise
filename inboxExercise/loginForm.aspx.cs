@@ -12,8 +12,20 @@ namespace inboxExercise
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+            if (!IsPostBack)
 
-		}
+            {
+
+                if (Request.Cookies["EmailAddress"] != null)
+
+                    TextBox1.Text = Request.Cookies["EmailAddress"].Value;
+
+                if (Request.Cookies["Password"] != null)
+                    TextBox2.Attributes.Add("value", Request.Cookies["Password"].Value);
+                if (Request.Cookies["Emailaddress"] != null && Request.Cookies["Password"] != null)
+                    CheckBox1.Checked = true;
+            }
+        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
