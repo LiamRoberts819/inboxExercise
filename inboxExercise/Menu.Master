@@ -1,5 +1,14 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Menu.master.cs" Inherits="inboxExercise.Menu" %>
-
+<% @Import Namespace="System.Data.SqlClient" %>
+<% 
+    SqlConnection con;
+    SqlCommand cmd;
+    SqlDataReader reader;
+    con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\Administrator\Documents\Visual Studio 2015\Projects\ASP.Net\WebApplication1\WebApplication1\App_Data\QA.mdf';Integrated Security=True");
+    con.Open();
+    cmd = new SqlCommand();
+    cmd.Connection = con;
+%>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
