@@ -20,12 +20,11 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="height: 26px" Text="Reset Password:" />
         <br />
         <br />
-        Current Password: <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
-        <br />
         Enter New Password:
-        <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
-        <br />
         <asp:TextBox ID="TextBox3" runat="server" Visible="False"></asp:TextBox>
+        <br />
+        Confirm New Password: <asp:TextBox ID="TextBox4" runat="server" OnTextChanged="TextBoxNewConfirm_TextChanged" Visible="False"></asp:TextBox>
+        <br />
         <br />
         <asp:Button ID="Button2" runat="server" Enabled="False" OnClick="Button2_Click" Text="Change Password" />
         <br />
