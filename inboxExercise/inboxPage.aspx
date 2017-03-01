@@ -3,7 +3,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h3>Inbox</h3><br />
+    <script>
+        var array = [];
+        var index;
+
+        function OnChange() {      
+            if (document.getElementById((window.event.srcElement.id)).checked = true)
+                array += (window.event.srcElement.id);
+            else
+            {
+                index = array.indexOf(window.event.srcElement.id);
+                if (index > -1)
+                {
+                    array.splice(index, 1);
+                }
+            }
+                    
+        }
+
+
+    </script>
+    <h3>Inbox</h3>
         <asp:Button ID="buttonCompose" runat="server" Text="Compose" />
     &nbsp;
         <asp:Button ID="buttonAddressBook" runat="server" Text="Address Book" />
@@ -11,41 +31,45 @@
         <a href="deletedPage.aspx"><input type="button" value="Deleted Emails" /></a> 
 
     <br />
-    <table id="tableInbox">
-        <tr>
-            <th>
-                <asp:Button ID="buttonDelete" runat="server" OnClick="buttonDelete_Click" Text="delete" />
-            </th>
-            <th>From</th>
-            <th>Subject</th>
-            <th>Date</th>
-        </tr>
-        <%
-            Session["User"] = "xyz";
-            SqlConnection con;
-            SqlCommand cmd;
-            SqlDataReader reader;
-            con = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString);
-            con.Open();
-            cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = (string.Format("select * from Emails where ToUser = '{0}' and Status != 'D'", Session["User"]));
-
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                Response.Write(string.Format("<tr><td><input type='checkbox' name='delete' value='{0}'/></td>", reader["EmailId"]));
-                Response.Write(string.Format("<td>{0}</td>", reader["FromUser"]));
-                Response.Write(string.Format("<td><a href = 'viewEmail.aspx?emailId={0}' />{1}</td>", reader["EmailId"], reader["Subject"]));
-                Response.Write(string.Format("<td>{0}</td></tr>", reader["Date"]));
-            }
-
-
-                %>
-
-    </table>
     
     
 
+    <br />
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+        <Columns>
+            <asp:TemplateField HeaderText="FromUser" SortExpression="FromUser">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("FromUser") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("FromUser") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Subject" SortExpression="Subject">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Subject") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("Subject") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Date" SortExpression="Date">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Date") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label3" runat="server" Text='<%# Bind("Date") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+        </Columns>
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionString %>" SelectCommand="SELECT [FromUser], [Subject], [Date] FROM [Emails] WHERE ([ToUser] = @ToUser)">
+        <SelectParameters>
+            <asp:Parameter DefaultValue="xyz" Name="ToUser" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <br />
+    
+
+    
 </asp:Content>

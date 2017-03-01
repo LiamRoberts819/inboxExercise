@@ -22,5 +22,10 @@ namespace inboxExercise
         protected void buttonDeletedEmails_Click(object sender, EventArgs e)
         {
         }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }
