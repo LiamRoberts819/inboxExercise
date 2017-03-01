@@ -5,17 +5,23 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h3>Inbox</h3><br />
         <asp:Button ID="buttonCompose" runat="server" Text="Compose" />
-&nbsp;
+    &nbsp;
         <asp:Button ID="buttonAddressBook" runat="server" Text="Address Book" />
+    &nbsp;
+        <a href="deletedPage.aspx"><input type="button" value="Deleted Emails" /></a> 
+
     <br />
     <table id="tableInbox">
         <tr>
-            <th>delete</th>
+            <th>
+                <asp:Button ID="buttonDelete" runat="server" OnClick="buttonDelete_Click" Text="delete" />
+            </th>
             <th>From</th>
             <th>Subject</th>
             <th>Date</th>
         </tr>
         <%
+            Session["User"] = "xyz";
             SqlConnection con;
             SqlCommand cmd;
             SqlDataReader reader;
@@ -23,15 +29,16 @@
             con.Open();
             cmd = new SqlCommand();
             cmd.Connection = con;
-            cmd.CommandText = (string.Format("select * from Emails where ToUser = '{0}'", Session["User"]));
+            cmd.CommandText = (string.Format("select * from Emails where ToUser = '{0}' and Status != 'D'", Session["User"]));
 
             reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                Response.Write(string.Format("<tr><td>{0}</td><td>{1}</td>", "  ", reader["From"]));
-                Response.Write(string.Format("<td>{0}</td><td><a href = 'viewEmail.aspx?emailId={1}' />{2}</td>", "  ",reader["EmailId"], reader["Subject"]));
-                Response.Write(string.Format("<td>{0}</td><td>{1}</td></tr>", "  ", reader["Date"]));
+                Response.Write(string.Format("<tr><td><input type='checkbox' name='delete' value='{0}'/></td>", reader["EmailId"]));
+                Response.Write(string.Format("<td>{0}</td>", reader["FromUser"]));
+                Response.Write(string.Format("<td><a href = 'viewEmail.aspx?emailId={0}' />{1}</td>", reader["EmailId"], reader["Subject"]));
+                Response.Write(string.Format("<td>{0}</td></tr>", reader["Date"]));
             }
 
 

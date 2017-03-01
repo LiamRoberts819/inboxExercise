@@ -5,9 +5,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="display: inline-block">
-            <input type="button" name="buttonDelete" id="buttonDelete" value="Delete" />
-            <br /><label for="textBoxEmail">From: </label>
+            <asp:Button ID="buttonDelete" runat="server" OnClick="buttonDelete_Click" Text="Delete" />
+&nbsp;<br /><label for="textBoxEmail">From: </label>
             <%
+                Response.Write(Request["EmailId"]);
                 SqlConnection con;
                 SqlCommand cmd;
                 SqlDataReader reader;
@@ -22,7 +23,7 @@
                 {
                     Response.Write(string.Format("<input type='text' name = 'textBoxEmail' id='textBoxEmail' value = '{0}'/>", reader["FromUser"].ToString()));
                     Response.Write("<br/><label for='textBoxText'>Body:</label>");
-                    Response.Write(string.Format("<br/><textarea rows = '10' cols = '50' name = 'textAreaBody' id='textAreaBody'>{0}</textarea>", reader["EmailBody"].ToString()));
+                    Response.Write(string.Format("<br/><textarea rows = '10' cols = '50' name = 'textAreaBody' id='textAreaBody'>{0}</textarea>", reader["Text"].ToString()));
                 }
                 %>
             <br /><asp:Button ID="buttonReply" runat="server" Text="Reply" OnClick="buttonReply_Click" />

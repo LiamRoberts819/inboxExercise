@@ -103,6 +103,7 @@
       <DependentUpon>emailInbox.mdf</DependentUpon>
     </Content>
     <Content Include="composePage.aspx" />
+    <Content Include="deletedPage.aspx" />
     <Content Include="inboxPage.aspx" />
     <Content Include="loginPage.aspx" />
     <Content Include="packages.config" />
@@ -130,6 +131,13 @@
     </Compile>
     <Compile Include="composePage.aspx.designer.cs">
       <DependentUpon>composePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deletedPage.aspx.cs">
+      <DependentUpon>deletedPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deletedPage.aspx.designer.cs">
+      <DependentUpon>deletedPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="inboxPage.aspx.cs">
       <DependentUpon>inboxPage.aspx</DependentUpon>
