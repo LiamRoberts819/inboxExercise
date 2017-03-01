@@ -43,9 +43,6 @@ namespace inboxExercise
                 {
                     Response.Cookies[R["EmailAddress"].ToString()].Value = TextBox1.Text;
                     Response.Cookies[R["Password"].ToString()].Value = TextBox2.Text;
-                    Response.Cookies[R["EmailAddress"].ToString()].Expires = DateTime.Now.AddDays(15);
-                    Response.Cookies[R["Password"].ToString()].Expires = DateTime.Now.AddDays(15);
-                    Response.Redirect("inboxPage.aspx");
                 }
 
                 else
@@ -53,6 +50,7 @@ namespace inboxExercise
                     Response.Cookies[R["EmailAddress"].ToString()].Expires = DateTime.Now.AddDays(-1);
                     Response.Cookies[R["Password"].ToString()].Expires = DateTime.Now.AddDays(-1);
                 }
+                Response.Redirect("inboxPage.aspx");
             }
             else
             {

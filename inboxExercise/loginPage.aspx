@@ -14,8 +14,14 @@
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Create Account" />
         <br />
         <br />
+        <asp:RadioButton ID="RadioButton1" runat="server" Text="Red" />
+        <asp:RadioButton ID="RadioButton2" runat="server" Text="Blue" />
+        <asp:RadioButton ID="RadioButton3" runat="server" Text="Yellow" />
+        <br />
     
     </div>
     </form>
+    <p>
+        &nbsp;</p>
 </body>
 </html>
