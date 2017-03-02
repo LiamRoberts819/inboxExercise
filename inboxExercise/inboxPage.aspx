@@ -3,26 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script>
-        var array = [];
-        var index;
 
-        function OnChange() {      
-            if (document.getElementById((window.event.srcElement.id)).checked = true)
-                array += (window.event.srcElement.id);
-            else
-            {
-                index = array.indexOf(window.event.srcElement.id);
-                if (index > -1)
-                {
-                    array.splice(index, 1);
-                }
-            }
-                    
-        }
-
-
-    </script>
+    <%Session["User"] = "xyz";%>
     <h3>Inbox</h3>
         <asp:Button ID="buttonCompose" runat="server" Text="Compose" />
     &nbsp;
@@ -31,12 +13,13 @@
         <a href="deletedPage.aspx"><input type="button" value="Deleted Emails" /></a> 
 
     <br />
-    
-    
-
-    <br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
         <Columns>
+            <asp:TemplateField HeaderText="Delete">
+                <ItemTemplate>
+                    <asp:CheckBox runat="server" ID="checkBoxDelete"/>
+                </ItemTemplate>
+            </asp:TemplateField>                
             <asp:TemplateField HeaderText="FromUser" SortExpression="FromUser">
                 <EditItemTemplate>
                     <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("FromUser") %>'></asp:TextBox>
@@ -68,7 +51,9 @@
             <asp:Parameter DefaultValue="xyz" Name="ToUser" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
+    <asp:Button ID="buttonDelete" runat="server" OnClick="buttonDelete_Click1" Text="Delete" />
     <br />
+
     
 
     

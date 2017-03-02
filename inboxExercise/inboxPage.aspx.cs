@@ -27,5 +27,18 @@ namespace inboxExercise
         {
 
         }
+
+        protected void buttonDelete_Click1(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in GridView1.Rows)
+            {
+                if (((CheckBox)row.FindControl("checkBoxDelete")).Checked)
+                {
+                    Response.Write(row.Cells[2].Text);
+                }
+            }
+        }
+
+
     }
 }
