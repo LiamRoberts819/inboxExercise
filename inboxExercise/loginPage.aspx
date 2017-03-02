@@ -1,27 +1,17 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginPage.aspx.cs" Inherits="inboxExercise.loginPage" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginPage.aspx.cs" Inherits="inboxExercise.loginPage" MasterPageFile="~/BGColour.Master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
-    
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Login" />
         <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Create Account" />
         <br />
         <br />
-        <asp:RadioButton ID="RadioButton1" runat="server" Text="Red" />
-        <asp:RadioButton ID="RadioButton2" runat="server" Text="Blue" />
-        <asp:RadioButton ID="RadioButton3" runat="server" Text="Yellow" />
+            <asp:RadioButton ID="RadioButton3" runat="server" GroupName="1" OnCheckedChanged="RadioButton3_CheckedChanged" Text="Yellow" />
+            <asp:RadioButton ID="RadioButton2" runat="server" GroupName="1" OnCheckedChanged="RadioButton2_CheckedChanged" Text="Blue" />
+            <asp:RadioButton ID="RadioButton4" runat="server" GroupName="1" OnCheckedChanged="RadioButton4_CheckedChanged" Text="Red" />
         <br />
-    
-    </div>
-    </form>
-    <p>
-        &nbsp;</p>
-</body>
-</html>
+
+        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Set Background Colour" />
+        
+</asp:Content>

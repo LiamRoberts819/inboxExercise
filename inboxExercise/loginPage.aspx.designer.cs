@@ -13,15 +13,6 @@ namespace inboxExercise {
     public partial class loginPage {
         
         /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
-        /// <summary>
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -40,13 +31,13 @@ namespace inboxExercise {
         protected global::System.Web.UI.WebControls.Button Button2;
         
         /// <summary>
-        /// RadioButton1 control.
+        /// RadioButton3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
+        protected global::System.Web.UI.WebControls.RadioButton RadioButton3;
         
         /// <summary>
         /// RadioButton2 control.
@@ -58,12 +49,21 @@ namespace inboxExercise {
         protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
         
         /// <summary>
-        /// RadioButton3 control.
+        /// RadioButton4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton3;
+        protected global::System.Web.UI.WebControls.RadioButton RadioButton4;
+        
+        /// <summary>
+        /// Button3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button3;
     }
 }

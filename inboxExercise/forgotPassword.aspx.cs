@@ -28,7 +28,6 @@ namespace inboxExercise
             {
                 if (TextBox2.Text == R["SecurityAnswer"].ToString())
                 {
-
                     TextBox3.Visible = true;
                     TextBox4.Visible = true;
                     TextBox1.ReadOnly = true;
