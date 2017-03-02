@@ -31,6 +31,33 @@ namespace inboxExercise {
         protected global::System.Web.UI.WebControls.Button buttonAddressBook;
         
         /// <summary>
+        /// buttonInbox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonInbox;
+        
+        /// <summary>
+        /// buttonDeletedPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonDeletedPage;
+        
+        /// <summary>
+        /// buttonSent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonSent;
+        
+        /// <summary>
         /// GridView1 control.
         /// </summary>
         /// <remarks>

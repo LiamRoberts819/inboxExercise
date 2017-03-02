@@ -10,23 +10,29 @@
     &nbsp;
         <asp:Button ID="buttonAddressBook" runat="server" Text="Address Book" />
     &nbsp;
-        <a href="deletedPage.aspx"><input type="button" value="Deleted Emails" /></a> 
+        <asp:Button ID="buttonInbox" runat="server" OnClick="buttonInbox_Click" Text="Inbox" />
+&nbsp;
+        <asp:Button ID="buttonDeletedPage" runat="server" Text="Deleted Emails" OnClick="buttonDeletedEmails_Click" />
+
+    &nbsp;
+    <asp:Button ID="buttonSent" runat="server" OnClick="buttonSent_Click" Text="Sent Emails" />
 
     <br />
 
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EmailId">
         <Columns>
+            <asp:TemplateField HeaderText="EmailId" InsertVisible="False" SortExpression="EmailId" Visible="False">
+                <EditItemTemplate>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Eval("EmailId") %>'></asp:Label>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label4" runat="server" Text='<%# Bind("EmailId") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
             <asp:TemplateField HeaderText="Delete">
                 <ItemTemplate>
                     <asp:CheckBox runat="server" ID="checkBoxDelete"/>
-                </ItemTemplate></asp:TemplateField>
-            <asp:TemplateField HeaderText="Subject" SortExpression="Subject">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Subject") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Subject") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="ToUser" SortExpression="ToUser">
@@ -35,6 +41,14 @@
                 </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="Label2" runat="server" Text='<%# Bind("ToUser") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Subject" SortExpression="Subject">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Subject") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:LinkButton PostBackUrl='<%#Eval("EmailId",@"viewEmail.aspx?emailId={0}") %>' ID="Label1" runat="server" Text='<%# Bind("Subject") %>'></asp:LinkButton>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Date" SortExpression="Date">
@@ -47,7 +61,7 @@
             </asp:TemplateField>
         </Columns>
 </asp:GridView>
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionString %>" SelectCommand="SELECT [Subject], [ToUser], [Date] FROM [Emails]">
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionString %>" SelectCommand="SELECT [Subject], [ToUser], [Date], [EmailId] FROM [Emails]">
 </asp:SqlDataSource>
     <br />
     <asp:Button ID="buttonDelete" runat="server" OnClick="buttonDelete_Click1" Text="Delete" />
