@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <%Session["User"] = "xyz";%>
+    
     <h3>Inbox</h3>
         <asp:Button ID="buttonCompose" runat="server" Text="Compose" />
     &nbsp;
@@ -13,27 +13,28 @@
         <a href="deletedPage.aspx"><input type="button" value="Deleted Emails" /></a> 
 
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+
+    <br />
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
         <Columns>
             <asp:TemplateField HeaderText="Delete">
                 <ItemTemplate>
                     <asp:CheckBox runat="server" ID="checkBoxDelete"/>
-                </ItemTemplate>
-            </asp:TemplateField>                
-            <asp:TemplateField HeaderText="FromUser" SortExpression="FromUser">
-                <EditItemTemplate>
-                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("FromUser") %>'></asp:TextBox>
-                </EditItemTemplate>
-                <ItemTemplate>
-                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("FromUser") %>'></asp:Label>
-                </ItemTemplate>
-            </asp:TemplateField>
+                </ItemTemplate></asp:TemplateField>
             <asp:TemplateField HeaderText="Subject" SortExpression="Subject">
                 <EditItemTemplate>
-                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Subject") %>'></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Subject") %>'></asp:TextBox>
                 </EditItemTemplate>
                 <ItemTemplate>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("Subject") %>'></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text='<%# Bind("Subject") %>'></asp:Label>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="ToUser" SortExpression="ToUser">
+                <EditItemTemplate>
+                    <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("ToUser") %>'></asp:TextBox>
+                </EditItemTemplate>
+                <ItemTemplate>
+                    <asp:Label ID="Label2" runat="server" Text='<%# Bind("ToUser") %>'></asp:Label>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Date" SortExpression="Date">
@@ -45,12 +46,10 @@
                 </ItemTemplate>
             </asp:TemplateField>
         </Columns>
-    </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionString %>" SelectCommand="SELECT [FromUser], [Subject], [Date] FROM [Emails] WHERE ([ToUser] = @ToUser)">
-        <SelectParameters>
-            <asp:Parameter DefaultValue="xyz" Name="ToUser" Type="String" />
-        </SelectParameters>
-    </asp:SqlDataSource>
+</asp:GridView>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionString %>" SelectCommand="SELECT [Subject], [ToUser], [Date] FROM [Emails]">
+</asp:SqlDataSource>
+    <br />
     <asp:Button ID="buttonDelete" runat="server" OnClick="buttonDelete_Click1" Text="Delete" />
     <br />
 
