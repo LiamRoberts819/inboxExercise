@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="loginPage.aspx.cs" Inherits="inboxExercise.loginPage" MasterPageFile="~/BGColour.Master" %>
+<% @ MasterType VirtualPath="~/BGColour.master"%>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -12,6 +13,4 @@
             <asp:RadioButton ID="RadioButton4" runat="server" GroupName="1" OnCheckedChanged="RadioButton4_CheckedChanged" Text="Red" />
         <br />
 
-        <asp:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="Set Background Colour" />
-        
 </asp:Content>

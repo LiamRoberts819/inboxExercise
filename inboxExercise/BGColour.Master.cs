@@ -11,7 +11,14 @@ namespace inboxExercise
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-          
+            //try {
+            //    if (Request.Cookies["Colour"].Value != "")
+            //    {
+            //        BG_Body.Style.Add("background-color", Request.Cookies["Colour"].Value);
+            //    }
+            //    }
+            //catch (Exception ex) { }
+
         }
     }
 }

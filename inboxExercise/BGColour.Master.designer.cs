@@ -22,6 +22,15 @@ namespace inboxExercise {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
+        /// BG_Body control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl BG_Body;
+        
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>

@@ -58,12 +58,15 @@ namespace inboxExercise {
         protected global::System.Web.UI.WebControls.RadioButton RadioButton4;
         
         /// <summary>
-        /// Button3 control.
+        /// Master property.
         /// </summary>
         /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
+        /// Auto-generated property.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        public new inboxExercise.BGColour Master {
+            get {
+                return ((inboxExercise.BGColour)(base.Master));
+            }
+        }
     }
 }
