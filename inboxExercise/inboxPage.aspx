@@ -6,7 +6,7 @@
 
     
     <h3>Inbox</h3>
-        <asp:Button ID="buttonCompose" runat="server" Text="Compose" />
+        <asp:Button ID="buttonCompose" runat="server" Text="Compose" OnClick="buttonCompose_Click" />
     &nbsp;
         <asp:Button ID="buttonAddressBook" runat="server" Text="Address Book" />
     &nbsp;
@@ -33,6 +33,11 @@
             <asp:TemplateField HeaderText="Delete">
                 <ItemTemplate>
                     <asp:CheckBox runat="server" ID="checkBoxDelete"/>
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Restore">
+                <ItemTemplate>
+                    <asp:Button runat="server" ID="buttonRestore" Text="Restore"/>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="ToUser" SortExpression="ToUser">

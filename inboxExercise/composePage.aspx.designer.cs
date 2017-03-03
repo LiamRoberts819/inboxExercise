@@ -13,6 +13,42 @@ namespace inboxExercise {
     public partial class composePage {
         
         /// <summary>
+        /// textBoxTo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxTo;
+        
+        /// <summary>
+        /// textBoxCc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxCc;
+        
+        /// <summary>
+        /// textBoxSubject control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxSubject;
+        
+        /// <summary>
+        /// textBoxEmail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxEmail;
+        
+        /// <summary>
         /// buttonSend control.
         /// </summary>
         /// <remarks>

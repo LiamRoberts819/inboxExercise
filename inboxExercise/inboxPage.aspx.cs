@@ -41,7 +41,7 @@ namespace inboxExercise
             cmd.Connection = con;
             Session["User"] = "xyz";
 
-            cmd.CommandText = string.Format("select * from Emails where ToUser = '{0}' and Status = 'D'", Session["User"]);
+            cmd.CommandText = string.Format("select * from Emails where ToUser = '{0}' and Deleted = 'D'", Session["User"]);
             reader = cmd.ExecuteReader();
             dt = new DataTable();
             dt.Load(reader);
@@ -72,7 +72,7 @@ namespace inboxExercise
                         cmd = new SqlCommand();
                         cmd.Connection = con;
 
-                        cmd.CommandText = string.Format("update Emails set Status='D' where EmailId = '{0}'", id);
+                        cmd.CommandText = string.Format("update Emails set Deleted='D' where EmailId = '{0}'", id);
                         Response.Write(cmd.CommandText);
                         cmd.ExecuteNonQuery();
                     }
@@ -89,7 +89,7 @@ namespace inboxExercise
             cmd.Connection = con;
             Session["User"] = "xyz";
 
-            cmd.CommandText = string.Format("select * from Emails where ToUser = '{0}' and Status <> 'D'", Session["User"]);
+            cmd.CommandText = string.Format("select * from Emails where ToUser = '{0}' and Deleted = 'N'", Session["User"]);
             reader = cmd.ExecuteReader();
             dt = new DataTable();
             dt.Load(reader);
@@ -138,6 +138,11 @@ namespace inboxExercise
                     row.Style.Add(HtmlTextWriterStyle.FontWeight, "Bold");
                 }
             }
+        }
+
+        protected void buttonCompose_Click(object sender, EventArgs e)
+        {
+        
         }
     }
 }
