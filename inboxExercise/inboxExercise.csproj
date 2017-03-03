@@ -98,20 +98,26 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+
+    <Content Include="forgotPassword.aspx" />
+
     <Content Include="App_Data\emailInbox.mdf" />
     <Content Include="App_Data\emailInbox_log.ldf">
       <DependentUpon>emailInbox.mdf</DependentUpon>
     </Content>
     <Content Include="composePage.aspx" />
     <Content Include="deletedPage.aspx" />
+
     <Content Include="inboxPage.aspx" />
     <Content Include="loginPage.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Menu.Master" />
     <Content Include="createAccount.aspx" />
+    <Content Include="BGColour.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -125,6 +131,21 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+
+    <Compile Include="BGColour.Master.cs">
+      <DependentUpon>BGColour.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BGColour.Master.designer.cs">
+      <DependentUpon>BGColour.Master</DependentUpon>
+    </Compile>
+    <Compile Include="forgotPassword.aspx.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="forgotPassword.aspx.designer.cs">
+      <DependentUpon>forgotPassword.aspx</DependentUpon>
+
     <Compile Include="composePage.aspx.cs">
       <DependentUpon>composePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -138,6 +159,7 @@
     </Compile>
     <Compile Include="deletedPage.aspx.designer.cs">
       <DependentUpon>deletedPage.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="inboxPage.aspx.cs">
       <DependentUpon>inboxPage.aspx</DependentUpon>

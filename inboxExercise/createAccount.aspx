@@ -1,13 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="createAccount.aspx.cs" Inherits="inboxExercise.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="createAccount.aspx.cs" Inherits="inboxExercise.WebForm1" MasterPageFile="~/BGColour.Master" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
         Name:
         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
@@ -28,6 +23,8 @@
         <br />
         Security Answer:
         <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
-    </form>
-</body>
-</html>
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Create" />
+
+</asp:Content>

@@ -11,7 +11,14 @@ namespace inboxExercise
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                if (Request.Cookies["Colour"].Value != "")
+                {
+                    Menu_Body.Style.Add("background-color", Request.Cookies["Colour"].Value);
+                }
+            }
+            catch (Exception ex) { }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -22,7 +29,8 @@ namespace inboxExercise
         protected void Button3_Click(object sender, EventArgs e)
         {
             Session.Abandon();
-            Response.Redirect("loginPage");
+            Response.Redirect("loginPage.aspx");
+
         }
     }
 }
