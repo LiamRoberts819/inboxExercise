@@ -30,6 +30,7 @@ namespace inboxExercise
         {
             Session.Abandon();
             Response.Redirect("loginPage.aspx");
+
         }
     }
 }

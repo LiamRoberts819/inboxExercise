@@ -98,7 +98,16 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+
     <Content Include="forgotPassword.aspx" />
+
+    <Content Include="App_Data\emailInbox.mdf" />
+    <Content Include="App_Data\emailInbox_log.ldf">
+      <DependentUpon>emailInbox.mdf</DependentUpon>
+    </Content>
+    <Content Include="composePage.aspx" />
+    <Content Include="deletedPage.aspx" />
+
     <Content Include="inboxPage.aspx" />
     <Content Include="loginPage.aspx" />
     <Content Include="packages.config" />
@@ -118,9 +127,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="loginForm.aspx" />
+    <Content Include="viewEmail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="BGColour.Master.cs">
       <DependentUpon>BGColour.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -134,6 +145,21 @@
     </Compile>
     <Compile Include="forgotPassword.aspx.designer.cs">
       <DependentUpon>forgotPassword.aspx</DependentUpon>
+
+    <Compile Include="composePage.aspx.cs">
+      <DependentUpon>composePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="composePage.aspx.designer.cs">
+      <DependentUpon>composePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deletedPage.aspx.cs">
+      <DependentUpon>deletedPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deletedPage.aspx.designer.cs">
+      <DependentUpon>deletedPage.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="inboxPage.aspx.cs">
       <DependentUpon>inboxPage.aspx</DependentUpon>
@@ -170,6 +196,13 @@
     </Compile>
     <Compile Include="createAccount.aspx.designer.cs">
       <DependentUpon>createAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="viewEmail.aspx.cs">
+      <DependentUpon>viewEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="viewEmail.aspx.designer.cs">
+      <DependentUpon>viewEmail.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
