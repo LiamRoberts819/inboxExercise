@@ -25,8 +25,14 @@ namespace inboxExercise
             cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = string.Format("insert into Emails (FromUser, ToUser, Subject, Text) values ('{0}','{1}','{2}','{3}')", Session["User"], textBoxTo.Text, textBoxSubject.Text, textBoxEmail.Text);
-            //Response.Write(cmd.CommandText);
             cmd.ExecuteNonQuery();
+
+
+            if (textBoxCc.Text != "")
+            {
+                cmd.CommandText= string.Format("insert into Emails (FromUser, ToUser, Subject, Text) values ('{0}','{1}','{2}','{3}')", Session["User"], textBoxCc.Text, textBoxSubject.Text, textBoxEmail.Text);
+                cmd.ExecuteNonQuery();
+            }
             Response.Redirect("inboxPage.aspx");
         }
         
@@ -36,8 +42,6 @@ namespace inboxExercise
             {
                 textBoxTo.Text = Session["replyEmail"].ToString();
                 textBoxSubject.Text = "Re: " + Session["replySubject"].ToString();
-                             
-
             }
         }
     }

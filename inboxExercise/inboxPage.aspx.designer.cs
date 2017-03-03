@@ -22,15 +22,6 @@ namespace inboxExercise {
         protected global::System.Web.UI.WebControls.Button buttonCompose;
         
         /// <summary>
-        /// buttonAddressBook control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button buttonAddressBook;
-        
-        /// <summary>
         /// buttonInbox control.
         /// </summary>
         /// <remarks>
@@ -83,5 +74,14 @@ namespace inboxExercise {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button buttonDelete;
+        
+        /// <summary>
+        /// buttonRestore control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button buttonRestore;
     }
 }

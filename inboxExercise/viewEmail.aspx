@@ -8,7 +8,6 @@
             <asp:Button ID="buttonDelete" runat="server" OnClick="buttonDelete_Click" Text="Delete" />
 &nbsp;<br /><label for="textBoxEmail">From: </label>
             <%
-                Response.Write(Request["EmailId"]);
                 SqlConnection con;
                 SqlCommand cmd;
                 SqlDataReader reader;

@@ -8,10 +8,8 @@
     <h3>Inbox</h3>
         <asp:Button ID="buttonCompose" runat="server" Text="Compose" OnClick="buttonCompose_Click" />
     &nbsp;
-        <asp:Button ID="buttonAddressBook" runat="server" Text="Address Book" />
-    &nbsp;
         <asp:Button ID="buttonInbox" runat="server" OnClick="buttonInbox_Click" Text="Inbox" />
-&nbsp;
+    &nbsp;
         <asp:Button ID="buttonDeletedPage" runat="server" Text="Deleted Emails" OnClick="buttonDeletedEmails_Click" />
 
     &nbsp;
@@ -20,7 +18,7 @@
     <br />
 
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EmailId">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="EmailId" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
         <Columns>
             <asp:TemplateField HeaderText="EmailId" InsertVisible="False" SortExpression="EmailId" Visible="False">
                 <EditItemTemplate>
@@ -37,7 +35,7 @@
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Restore">
                 <ItemTemplate>
-                    <asp:Button runat="server" ID="buttonRestore" Text="Restore"/>
+                    <asp:CheckBox runat="server" ID="checkBoxRestore"/>
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="ToUser" SortExpression="ToUser">
@@ -69,7 +67,8 @@
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:MyConnectionString %>" SelectCommand="SELECT [Subject], [ToUser], [Date], [EmailId] FROM [Emails]">
 </asp:SqlDataSource>
     <br />
-    <asp:Button ID="buttonDelete" runat="server" OnClick="buttonDelete_Click1" Text="Delete" />
+    <asp:Button ID="buttonDelete" runat="server" OnClick="buttonDelete_Click" Text="Delete" />
+    <asp:Button ID="buttonRestore" runat="server" OnClick="buttonRestore_Click" Text="Restore" />
     <br />
 
     
